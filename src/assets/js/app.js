@@ -19,6 +19,7 @@ for (let i = 0; i < keys.length; i++) {
 			decimalAdded = true;
 			logger.log('Cleared calculator output');
 		} else if (btnVal === '=') {
+			
 			let equation = inputVal;
 			const lastChar = equation[equation.length - 1];
 
@@ -53,7 +54,11 @@ for (let i = 0; i < keys.length; i++) {
 				input.textContent += btnVal;
 				decimalAdded = false;
 			}
-		} else {
+		}  else if(btnVal === 'x²'){
+			input.textContent = "pow("+input.textContent+",2)" ;
+			decimalAdded = false;
+		}
+		else {
 			input.textContent += btnVal;
 		}
 		e.preventDefault();
@@ -94,6 +99,8 @@ document.addEventListener('keydown', event => {
 		decimalAdded = true;
 	}
 
+
+	
 	if ((code == 'Period' || code == 'NumpadDecimal') && decimalAdded == true) {
 		input.textContent += '.';
 		decimalAdded = false;
