@@ -13,7 +13,7 @@ process.on('uncaughtException', err => {
 app.on('ready', () => {
 	let win = new BrowserWindow({
 		width: 330,
-		height: 350,
+		height: 400,
 		maximizable: false,
 		resizable: false,
 		backgroundColor: '#9BA6A7',
